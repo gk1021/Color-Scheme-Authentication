@@ -114,10 +114,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 		}
 		out.print("<br><br>");
-		out.print("<input type='text' name='bb1' id='rb'>");
-		out.print("<input type='text' name='bb2' id='gb'>");
-		out.print("<input type='text' name='bb3' id='bb'>");
-		out.print("<input type='text' name='bb4' id='yb'>");
+		out.print("<input type='text' name='bb1' id='rb' '>");
+		out.print("<input type='text' name='bb2' id='gb' '>");
+		out.print("<input type='text' name='bb3' id='bb' '>");
+		out.print("<input type='text' name='bb4' id='yb' >");
 		out.print("<br>");
 		out.println("<input type='submit' value='submit'>");
 		out.print("</form>");
