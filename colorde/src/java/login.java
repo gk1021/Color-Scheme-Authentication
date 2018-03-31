@@ -1,26 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.ServletContext;
 
 /**
- *
- * @author Acer
+ * Servlet implementation class Login
  */
+@WebServlet("/Login")
 public class login extends HttpServlet {
-
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public login() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
     public	String[] color={"#ff0000","#00ff00","#0000ff","#00ffff"};
-public int[] num={1,2,3,4}; 	
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public int[] num={1,2,3,4}; 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
 		shuffle();
@@ -29,7 +40,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.print("<title>login</title>");
 		out.print("</head>");
 		out.print("<body>");
-		out.print("<form align='center' action='/colorde/s2' method='post'>");
+		out.print("<form align='center' action='s2' method='post'>");
+                out.print("email");
+                out.print("<input type='text' name='email'><br><br>");
+                out.print("password");
+                out.print("<input type='password' name='ps'><br><br>");
 		for(int j=0;j<4;j++)
 		{
 			if(j==0)
@@ -114,6 +129,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		
 		}
 		out.print("<br><br>");
+	//	out.print("Email<input type='text' name='email1' id='em' '>");
+		//out.print("Password<input type='text' name='password1' id='ps' '>");
 		out.print("<input type='text' name='bb1' id='rb' '>");
 		out.print("<input type='text' name='bb2' id='gb' '>");
 		out.print("<input type='text' name='bb3' id='bb' '>");
@@ -169,10 +186,14 @@ public void shuffle()
 		}
 	}
 	
-	
-}
+	}
 
-
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 
 }
